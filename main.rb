@@ -26,7 +26,7 @@ input = STDIN.gets.chomp.to_i
         puts "Введите количество: "
         amount = gets.chomp
         book = Book.new(names: names, price: price, amount: amount, genre: genre, author: author)
-        
+        book.arr
     elsif input == 2
         puts "Введите название фильма: "
         names = gets.chomp
@@ -39,13 +39,14 @@ input = STDIN.gets.chomp.to_i
         puts "Введите количество: "
         amount = gets.chomp
         movie = Movie.new(names: names, price: price, amount: amount, years: years, rejissor: rejissor)
-    elsif input == "end"
-        break
+        movie.arr
+
+       
     else
-        abort "Вы ввели неправильное значение."
+        puts "Вы ввели неправильное значение."
+         puts "Наши товары"
+        book.to_strings
+        movie.to_strings
     end
 end
 
-puts "Наши товары"
-book.to_strings
-movie.to_strings
