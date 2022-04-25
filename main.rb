@@ -8,45 +8,44 @@ require_relative "lib/movie"
 
 # puts "Вводите товары до слово \"end\""
 # user_input = STDIN.gets.chomp
-input = 0
-while input != 'end'  do
+inputs = 0
+while inputs != 'end'  do
 puts "Выберите какой товар хотите добавить: 
 1 - Книга
 2 - Фильм"
-input = STDIN.gets.chomp.to_i
-    if input == 1
+inputs = STDIN.gets.chomp.to_i
+    if inputs == 1
         puts "Введите название книги: "
-        names = gets.chomp
+        names = gets.chomp.to_s
         puts "Введите жанр: "
-        genre = gets.chomp
+        genre = gets.chomp.to_s
         puts "Введите автор: "
-        author = gets.chomp
+        author = gets.chomp.to_s
         puts "Введите цену: "
-        price = gets.chomp
+        price = gets.chomp.to_s
         puts "Введите количество: "
-        amount = gets.chomp
+        amount = gets.chomp.to_s
         book = Book.new(names: names, price: price, amount: amount, genre: genre, author: author)
         book.arr
-    elsif input == 2
+    elsif inputs == 2
         puts "Введите название фильма: "
-        names = gets.chomp
+        names = gets.chomp.to_s
         puts "Введите год: "
-        years = gets.chomp
+        years = gets.chomp.to_s
         puts "Введите режиссёра: "
-        rejissor = gets.chomp
+        rejissor = gets.chomp.to_s
         puts "Введите цену: "
-        price = gets.chomp
+        price = gets.chomp.to_s
         puts "Введите количество: "
-        amount = gets.chomp
+        amount = gets.chomp.to_s
         movie = Movie.new(names: names, price: price, amount: amount, years: years, rejissor: rejissor)
         movie.arr
-
-       
     else
         puts "Вы ввели неправильное значение."
-         puts "Наши товары"
+        puts "Наши товары"
         book.to_strings
         movie.to_strings
+        break
     end
 end
 

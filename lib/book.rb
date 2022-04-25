@@ -10,8 +10,17 @@ class Book < Product
     end
     
     def to_strings
-        @array_book.each_with_index do |array, number|
-            puts "Книга \" #{array[:names]} \", #{array[:genre]}, автор - #{array[:author]}, #{array[:price]} руб. (осталось - #{array[:amount]}) "
-        end
+        # @array_book.each_with_index do |arrays, number|
+        #     puts "Книга \" #{arrays[:names].to_s} \", #{arrays[:genre].to_s}, автор - #{arrays[:author].to_s},
+        #      #{arrays[:price].to_s} руб. (осталось - #{arrays[:amount].to_s}) "
+        # end
+        @array_book.each_pair {|key, value| 
+            puts "#{:names} => #{@names}"
+            puts "#{:genre} => #{@genre}"
+            puts "#{:author} => #{@author}"
+            puts "#{:price} => #{@price}"
+            puts "#{:amount} => #{@amount}"
+        
+        }
     end
 end
