@@ -47,6 +47,7 @@ inputs = STDIN.gets.chomp.to_i
         puts "Наши товары"
         books.printed_file
         movies.printed_file
+        break
     else
         puts "Неправильное значение!!!"
         break

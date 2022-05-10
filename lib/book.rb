@@ -12,13 +12,9 @@ class Book < Product
     end
     
     def to_strings
-        # @array_book.each_with_index do |keys, number|
-        #     puts "Книга \" #{arrays[:names].to_s} \", #{arrays[:genre].to_s}, автор - #{arrays[:author].to_s},
-        #      #{arrays[:price].to_s} руб. (осталось - #{arrays[:amount].to_s}) "
-        # end
-        @file_path = File.dirname(__FILE__)
+        @file_path = File.dirname(__FILE__) 
         @file = File.new(@file_path + "/book.txt", "a:UTF-8")
-        @book = "Название Книги: #{@array_book[:names]} Жанр: #{@array_book[:genre]} Автор: #{@array_book[:author]} Цена: #{@array_book[:price]} Осталось(#{@array_book[:amount]})"
+        @book = "Название книги: #{@array_book[:names]} -- жанр: #{@array_book[:genre]} -- автор: #{@array_book[:author]} -- цена: #{@array_book[:price]} - осталось(#{@array_book[:amount]})"
         @file.puts(@book)
         @file.close
     end

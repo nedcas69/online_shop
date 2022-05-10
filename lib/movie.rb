@@ -13,7 +13,7 @@ class Movie < Product
     def to_strings
         @file_path = File.dirname(__FILE__)
         @file = File.new(@file_path + "/movie.txt", "a:UTF-8")
-        @movie = "Название Фильма : #{@array_movie[:names]} Год выпуска: #{@array_movie[:years]} Режиссер: #{@array_movie[:rejissor]} Цена: #{@array_movie[:price]} осталось(#{@array_movie[:amount]})"
+        @movie = "Название фильма : #{@array_movie[:names]} -- год выпуска: #{@array_movie[:years]} -- режиссер: #{@array_movie[:rejissor]} -- цена: #{@array_movie[:price]} - осталось(#{@array_movie[:amount]})"
         @file.puts(@movie)
         @file.close
         
