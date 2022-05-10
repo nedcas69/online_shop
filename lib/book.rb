@@ -20,7 +20,6 @@ class Book < Product
             puts "#{:author} => #{@author}"
             puts "#{:price} => #{@price}"
             puts "#{:amount} => #{@amount}"
-        
         }
     end
 end

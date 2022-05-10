@@ -41,7 +41,6 @@ inputs = STDIN.gets.chomp.to_i
         movie = Movie.new(names: names, price: price, amount: amount, years: years, rejissor: rejissor)
         movie.arr
     else
-        puts "Вы ввели неправильное значение."
         puts "Наши товары"
         book.to_strings
         movie.to_strings
