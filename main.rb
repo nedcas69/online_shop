@@ -12,7 +12,8 @@ inputs = 0
 while inputs != 'end'  do
 puts "Выберите какой товар хотите добавить: 
 1 - Книга
-2 - Фильм"
+2 - Фильм
+3 - Закончить и просмотреть товары"
 inputs = STDIN.gets.chomp.to_i
     if inputs == 1
         puts "Введите название книги: "
@@ -25,8 +26,9 @@ inputs = STDIN.gets.chomp.to_i
         price = gets.chomp.to_s
         puts "Введите количество: "
         amount = gets.chomp.to_s
-        book = Book.new(names: names, price: price, amount: amount, genre: genre, author: author)
-        book.arr
+        books = Book.new(names: names, price: price, amount: amount, genre: genre, author: author)
+        books.arr
+        books.to_strings
     elsif inputs == 2
         puts "Введите название фильма: "
         names = gets.chomp.to_s
@@ -38,12 +40,15 @@ inputs = STDIN.gets.chomp.to_i
         price = gets.chomp.to_s
         puts "Введите количество: "
         amount = gets.chomp.to_s
-        movie = Movie.new(names: names, price: price, amount: amount, years: years, rejissor: rejissor)
-        movie.arr
-    else
+        movies = Movie.new(names: names, price: price, amount: amount, years: years, rejissor: rejissor)
+        movies.arr
+        movies.to_strings
+    elsif inputs == 3 
         puts "Наши товары"
-        book.to_strings
-        movie.to_strings
+        books.printed_file
+        movies.printed_file
+    else
+        puts "Неправильное значение!!!"
         break
     end
 end
