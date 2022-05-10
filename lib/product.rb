@@ -15,4 +15,10 @@ class Product
       @genre = params[:genre]
       @author = params[:author]
     end
+    def to_strings
+      # Абстрактный метод
+    end
+    def arr
+      
+    end
 end
