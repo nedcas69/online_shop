@@ -22,7 +22,7 @@ puts "Выберите какой товар хотите добавить:
 inputs = STDIN.gets.chomp.to_i
     if inputs == 1
         puts "Введите название книги: "
-        names = gets.chomp.to_s
+        title = gets.chomp.to_s
         puts "Введите жанр: "
         genre = gets.chomp.to_s
         puts "Введите автор: "
@@ -31,12 +31,12 @@ inputs = STDIN.gets.chomp.to_i
         price = gets.chomp.to_s
         puts "Введите количество: "
         amount = gets.chomp.to_s
-        books = Book.new(names: names, price: price, amount: amount, genre: genre, author: author)
+        books = Book.new(title: title, price: price, amount: amount, genre: genre, author: author)
         books.arr
         books.to_strings
     elsif inputs == 2
         puts "Введите название фильма: "
-        names = gets.chomp.to_s
+        title = gets.chomp.to_s
         puts "Введите год: "
         years = gets.chomp.to_s
         puts "Введите режиссёра: "
@@ -45,17 +45,25 @@ inputs = STDIN.gets.chomp.to_i
         price = gets.chomp.to_s
         puts "Введите количество: "
         amount = gets.chomp.to_s
-        movies = Movie.new(names: names, price: price, amount: amount, years: years, rejissor: rejissor)
+        movies = Movie.new(title: title, price: price, amount: amount, years: years, rejissor: rejissor)
         movies.arr
         movies.to_strings
     elsif inputs == 3 
         puts "Наши товары"
+        books = Book.new(title: title, price: price, amount: amount, genre: genre, author: author)
+        books.arr
+        books.to_strings
+        movies = Movie.new(names: title, price: price, amount: amount, years: years, rejissor: rejissor)
+        movies.arr
+        movies.to_strings
         books.printed_file
         movies.printed_file
         break
     else
+        array_book = []
+        array_movie = []
         puts "Неправильное значение!!!"
-        product = Product.new
+        product = Product.new(price: price, amount: amount, title: title, years: years, rejissor: rejissor, genre: genre, author: author, array_movie: array_book, array_book: array_book)
         product.printed_file
         break
     end
