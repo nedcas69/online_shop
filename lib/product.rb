@@ -3,7 +3,7 @@
 class Product
     # У любого экземпляра класса Товар будут как минимум две переменные — цена
     # и количество единиц товара на складе
-    attr_reader :price, :amount, :names, :years, :rejissor, :genre, :author, :array_movie, :array_book
+    attr_accessor :price, :amount, :title, :years, :rejissor, :genre, :author, :array_movie, :array_book
 
     # Конструктор товара записывает, сколько стоит товар и сколько осталось
     def initialize(params)
@@ -11,7 +11,7 @@ class Product
       @array_book = params[:array_book]
       @price = params[:price]
       @amount = params[:amount]
-      @names = params[:names]
+      @title = params[:title]
       @years = params[:years]
       @rejissor = params[:rejissor]
       @genre = params[:genre]
@@ -26,6 +26,28 @@ class Product
       
     end
     def printed_file
-   
-  end
+      puts "NotImplementedError"
+    end
+    # def price=(price)
+    #   @price = price
+    # end
+    # def amount=(amount)
+    #   @amount = amount
+    # end
+    # def title=(title)
+    #   @title = title
+    # end
+    # def years=(years)
+    #   @years = years
+    # end
+    # def rejissor=(rejissor)
+    #   @rejissor = rejissor
+    # end
+    # def genre=(genre)
+    #   @genre = genre
+    # end
+    # def author=(author)
+    #   @author = author
+    # end
+
 end

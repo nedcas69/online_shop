@@ -6,8 +6,13 @@ require_relative "lib/movie"
 # Пока функционал у нас очень простой, но фильм мы создать уже можем. Создадим
 # новый товар — книги за 190 рублей, и скажем, на складе их осталось 5 штук.
 
-# puts "Вводите товары до слово \"end\""
-# user_input = STDIN.gets.chomp
+# product_movie = Movie.new(title: 'Леон', rejissor: 'Люк Бессон', price: 990, amount: 25)
+# product_book = Book.new(title: 'Леонa', author: 'Люкa Бессонa', price: 99099, amount: 14)
+# product_movie.years = 1994
+# product_book.genre = "Криминал"
+# product_movie.to_strings
+# product_book.to_strings
+
 inputs = 0
 while inputs != 'end'  do
 puts "Выберите какой товар хотите добавить: 
@@ -44,15 +49,14 @@ inputs = STDIN.gets.chomp.to_i
         movies.arr
         movies.to_strings
     elsif inputs == 3 
-        change = KeysChange.new(names: names, price: price, amount: amount, years: years, rejissor: rejissor, genre: genre, author: author)
-        change.author = 'Malibu'
-        change.rejissor = 'Clark Kent'
         puts "Наши товары"
         books.printed_file
         movies.printed_file
         break
     else
         puts "Неправильное значение!!!"
+        product = Product.new
+        product.printed_file
         break
     end
 end
