@@ -44,6 +44,9 @@ inputs = STDIN.gets.chomp.to_i
         movies.arr
         movies.to_strings
     elsif inputs == 3 
+        change = KeysChange.new(names: names, price: price, amount: amount, years: years, rejissor: rejissor, genre: genre, author: author)
+        change.author = 'Malibu'
+        change.rejissor = 'Clark Kent'
         puts "Наши товары"
         books.printed_file
         movies.printed_file
