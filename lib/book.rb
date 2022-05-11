@@ -4,7 +4,7 @@ class Book < Product
     def initialize(params)
         super
         @book
-        @books_array  
+        @books 
     end
    
     def arr
@@ -20,10 +20,9 @@ class Book < Product
         # puts @book
     end
     def printed_file # для вывода сохраненного файла на экран
-        @file_path = File.dirname(__FILE__)
-        @file = File.new(@file_path + "/data/book.txt", "r:UTF-8") 
-        lines = @file.readlines
-        @file.close 
+        @file_read = File.new(@file_path + "/data/book.txt", "r:UTF-8") 
+        lines = @file_read.readlines
+        @file_read.close 
         @books_array = []
         lines.each do |line|
                 @books_array << line

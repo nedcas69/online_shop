@@ -3,7 +3,7 @@
 class Product
     # У любого экземпляра класса Товар будут как минимум две переменные — цена
     # и количество единиц товара на складе
-    attr_accessor :price, :amount, :title, :years, :rejissor, :genre, :author, :array_movie, :array_book
+    attr_reader :price, :amount, :title, :years, :rejissor, :genre, :author, :array_movie, :array_book
 
     # Конструктор товара записывает, сколько стоит товар и сколько осталось
     def initialize(params)
