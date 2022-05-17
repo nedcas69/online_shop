@@ -16,14 +16,18 @@ class Product
       @rejissor = params[:rejissor]
       @genre = params[:genre]
       @author = params[:author]
-      @file
+      @file = 0
       @file_path = File.dirname(__FILE__) 
-      @file_read_movie
-      @file_read_book
-      @collection_array
-      @lines
+      @file_read_movie = 0
+      @file_read_book = 0
+      @collection_array = 0
+      @lines = 0 
       @lines_book = 0
       @lines_movie = 0
+      @book = 0
+      @books_array = 0 
+      @movie = 0
+      @movies_array = 0
 
     end
     def to_strings
