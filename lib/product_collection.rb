@@ -1,5 +1,5 @@
 class ProductCollection < Product
-    def initialize
+    def initialize(params)
         super
         @book_array = []
         @movie_array = []
@@ -7,29 +7,25 @@ class ProductCollection < Product
     end
     
     def from_dir
-        @file_read_movie = File.new(@file_path + "/data/movie.txt", "r:UTF-8")
-        @file_read_book = File.new(@file_path + "/data/book.txt", "r:UTF-8") 
-        @file_read_movie.close
-        @file_read_book.close 
-        lines_movie = @file_read_movie.readlines
-        lines_book = @file_read_book.readlines
-        return lines_book
-        return lines_movie
+        
     end
     
     def to_a
-        
-        @lines_book = from_dir(lines_book)
-        @lines_movie = from_dir(lines_movie)
-        @collection_array = []
+        @file_read_movie = File.new(@file_path + "/data/movie.txt", "r:UTF-8")
+        @file_read_book = File.new(@file_path + "/data/book.txt", "r:UTF-8") 
+        @lines_movie = @file_read_movie.readlines
+        @lines_book = @file_read_book.readlines
+        @file_read_movie.close
+        @file_read_book.close 
         @lines_book.each do|line|
                 @book_array << line
         end
-        puts @book_array
+        
         @lines_movie.each do|line|
-                @movie_array << line
+            @movie_array << line
         end
-        puts @movie_array
+        @collection_array = @book_array + @movie_array
+        puts @collection_array
     end
 
     def sort

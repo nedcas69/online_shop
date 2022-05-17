@@ -10,8 +10,6 @@ product = Product.new(price: 0, amount: 0, title: 0, years: 0, rejissor: 0, genr
 # новый товар — книги за 190 рублей, и скажем, на складе их осталось 5 штук.
 
 
-# product_collection = ProductCollection.new
-# product_collection.to_a
 
 
 # product_movie = Movie.new(title: 'Леон', rejissor: 'Люк Бессон', price: 990, amount: 25)
@@ -57,3 +55,6 @@ books = Book.new(title: 0, price: 0, amount: 0, genre: 0, author: 0)
 books.printed_file
 puts
 movies.printed_file
+puts "колекция продуктов"
+product_collection = ProductCollection.new(price: 0, amount: 0, title: 0, years: 0, rejissor: 0, genre: 0, author: 0, array_movie: 0, array_book: 0)
+product_collection.to_a
