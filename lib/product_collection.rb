@@ -29,6 +29,8 @@ class ProductCollection < Product
     end
 
     def sort
-        
+        @collection_array.sort_by { |цена| }
+        puts
+        puts @collection_array
     end
 end
