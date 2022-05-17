@@ -3,6 +3,8 @@ class Movie < Product
 
     def initialize(params)
         super
+        @movie = 0
+        @movies_array = 0
     end
     def arr
         puts "Введите название фильма: "
@@ -30,9 +32,9 @@ class Movie < Product
     
     def printed_file # для вывода сохраненного файла на экран
         @file_read_movie = File.new(@file_path + "/data/movie.txt", "r:UTF-8")
-        @lines = @file_read_movie.readlines
+        lines = @file_read_movie.readlines
         @movies_array = []
-        @lines.each do|line|
+        lines.each do|line|
                 @movies_array << line
         end
         puts @movies_array

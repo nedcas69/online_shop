@@ -3,7 +3,7 @@
 class Product
     # У любого экземпляра класса Товар будут как минимум две переменные — цена
     # и количество единиц товара на складе
-    attr_reader :price, :amount, :title, :years, :rejissor, :genre, :author, :array_movie, :array_book, 
+    attr_reader :price, :amount, :title, :years, :rejissor, :genre, :author, :array_movie, :array_book 
 
     # Конструктор товара записывает, сколько стоит товар и сколько осталось
     def initialize(params)
@@ -20,14 +20,14 @@ class Product
       @file_path = File.dirname(__FILE__) 
       @file_read_movie = 0
       @file_read_book = 0
-      @collection_array = 0
+      @collection_array = []
       @lines = 0 
       @lines_book = 0
       @lines_movie = 0
       @book = 0
-      @books_array = 0 
+      @books_array = [] 
       @movie = 0
-      @movies_array = 0
+      @movies_array = []
 
     end
     def to_strings

@@ -3,7 +3,8 @@ require_relative "lib/product"
 require_relative "lib/book"
 require_relative "lib/movie"
 require_relative "lib/product_collection"
-
+product = Product.new(price: 0, amount: 0, title: 0, years: 0, rejissor: 0, genre: 0, author: 0, array_movie: 0, array_book: 0)
+       
 
 # Пока функционал у нас очень простой, но фильм мы создать уже можем. Создадим
 # новый товар — книги за 190 рублей, и скажем, на складе их осталось 5 штук.
@@ -43,15 +44,16 @@ inputs = STDIN.gets.chomp.to_i
         array_book = []
         array_movie = []
         puts "Неправильное значение!!!"
-        product = Product.new(price: 0, amount: 0, title: 0, years: 0, rejissor: 0, genre: 0, author: 0, array_movie: 0, array_book: 0)
-        product.printed_file
+         product.printed_file
+        
         break
     end
 end
 puts "Наши товары"
-
+puts
 movies = Movie.new(title: 0, price: 0, amount: 0, years: 0, rejissor: 0)
 books = Book.new(title: 0, price: 0, amount: 0, genre: 0, author: 0)
 
 books.printed_file
+puts
 movies.printed_file
