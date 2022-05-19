@@ -55,7 +55,7 @@ books = Book.new(title: 0, price: 0, amount: 0, genre: 0, author: 0)
 books.printed_file
 puts
 movies.printed_file
-puts "колекция продуктов"
-product_collection = ProductCollection.new(price: 0, amount: 0, title: 0, years: 0, rejissor: 0, genre: 0, author: 0, array_movie: 0, array_book: 0)
-product_collection.to_a
-product_collection.sort
+# puts "колекция продуктов"
+# product_collection = ProductCollection.new(price: 0, amount: 0, title: 0, years: 0, rejissor: 0, genre: 0, author: 0, array_movie: 0, array_book: 0, by: 0, order: 0, asc: 0)
+# product_collection.to_a
+# product_collection.sort!(title: 0)

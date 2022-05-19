@@ -28,9 +28,16 @@ class ProductCollection < Product
         puts @collection_array
     end
 
-    def sort
-        @collection_array.sort_by { |цена| }
-        puts
-        puts @collection_array
-    end
+    def sort!(params)
+        case params[:by]
+          when :title
+            @products.sort_by! {|product| product.title}
+          when :price
+            @products.sort_by! {|product| product.price}
+          when :amount
+            @products.sort_by! {|product| product.amount}
+          end
+          @products.reverse! if params[:order] == :asc
+          self
+      end
 end
