@@ -18,7 +18,7 @@ product = Product.new(price: 0, amount: 0, title: 0, years: 0, rejissor: 0, genr
 # product_book.genre = "Криминал"
 # product_movie.to_strings
 # product_book.to_strings
-inputs = 0
+inputs = ''
 while inputs != 'end'  do
 puts "Выберите какой товар хотите добавить: 
 1 - Книга
