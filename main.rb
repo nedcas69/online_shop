@@ -39,14 +39,13 @@ inputs = STDIN.gets.chomp.to_i
         
         break
     else
-        array_book = []
-        array_movie = []
         puts "Неправильное значение!!!"
          product.printed_file
         
         break
     end
 end
+puts
 puts "Наши товары"
 puts
 movies = Movie.new(title: 0, price: 0, amount: 0, years: 0, rejissor: 0)
